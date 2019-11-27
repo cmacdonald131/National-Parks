@@ -7,20 +7,21 @@ function formatQueryParams(params) {
     const queryItems= Object.keys(params)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
-
 }
 
 function displayResults(responseJson, maxResults) {
     console.log(responseJson);
-    $('results-list').empty();
+    $('#results-list').empty();
 
-    for (let i=0; i < responseJson.items.length; i++) {
+    for (let i=0; i < responseJson.data.length; i++) {
         $('#results-list').append (`<li><h3><a href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
         <p>${responseJson.data[i].description}</p></li>`);
     }
 
-    $('#results-list').removeClass('hidden');
+    $('#results').removeClass('hidden');
 };
+
+console.log();
 
 function lookForParks(searchURL, stateSearch, maxResults, apiKey) {
     const params= {
@@ -47,7 +48,7 @@ function lookForParks(searchURL, stateSearch, maxResults, apiKey) {
 }
 
 function watchForm() {
-    $('.jsform').on('submit', function() {
+    $('#jsform').on('submit', function(event) {
         event.preventDefault();
         const stateSearch= $('#jsStateSearch').val();
         const maxResults= $('#jsMaxResults').val();
