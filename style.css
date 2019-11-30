@@ -1,16 +1,8 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.hidden {
-    display: none;
-}
-
-.error-message {
-    color: red;
-}
-
-button, input[type="text"] {
+button, input[type="submit"] {
     padding: 5px;
 }
 
