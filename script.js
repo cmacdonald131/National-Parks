@@ -214,11 +214,11 @@ function generateStates() {
 
 function buildStateParams(states) {
     
-    let stateString = "";
+    let stateString = "stateCode=";
 
     for (let i = 0; i < states.length; i++) {
-        stateString += `stateCode=${states[i].value}`;
-        if (i !== states.length -1) {stateString += `&`}
+        stateString += `${states[i].value}`;
+        if (i !== states.length -1) {stateString += `,`}
     }
 
     return stateString;
