@@ -13,26 +13,16 @@
     <div class="container">
         <h1>Find a National Park</h1>
 
-        <form id="jsForm">
-            <label for="search-term">Pick a state you want to find a park in</label>
-            <input type="text" name="search-term" id="jsStateSearch" placeholder="MD, VA, etc." required>
-
-            <label for="maxResults">Max results for return</label>
-            <input type="number" name="maxResults" id="jsMaxResults" value="10">
-
-            <input type="submit" value="Check it out!">
+        <fform id="form">
+            <div id="states"></div><br>
+            <p><label for="maxResults"><strong>Maximum Number of Results</strong></label></p>
+            <p><input type="text" id="maxResults" value="10"></p>
+            <p><button type="submit" id="submit">Search</button></p>
         </form>
-
-        <p id="jsErrorMessage" class="error-message"></p>
-        <section id="results" class="hidden">
-            <h2>Search Results</h2>
-            <ul id="results-list">
-            </ul>
+        <div id="parks"></div>
         </section>
 
     </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
